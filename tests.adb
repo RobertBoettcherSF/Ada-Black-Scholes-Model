@@ -43,19 +43,19 @@ begin
    Put_Line ("TEST 1 — Call Option Price");
    Check_Float ("1.1 Call ATM (S=100, K=100)", CPrice (100.0, 100.0), 10.4506, Tol);
    Check_Float ("1.2 Call ITM (S=110, K=100)", CPrice (110.0, 100.0), 17.6630, Tol);
-   Check_Float ("1.3 Call OTM (S=90,  K=100)", CPrice (90.0,  100.0), 4.9211,  Tol);
+   Check_Float ("1.3 Call OTM (S=90,  K=100)", CPrice (90.0,  100.0), 5.0912,  Tol);
 
    -- TEST 2 — Put Option Price
    Put_Line ("TEST 2 — Put Option Price");
    Check_Float ("2.1 Put ATM (S=100, K=100)", PPrice (100.0, 100.0), 5.5735, Tol);
-   Check_Float ("2.2 Put ITM (S=90,  K=100)", PPrice (90.0,  100.0), 9.7998, Tol);
+   Check_Float ("2.2 Put ITM (S=90,  K=100)", PPrice (90.0,  100.0), 10.2142, Tol);
    Check_Float ("2.3 Put OTM (S=110, K=100)", PPrice (110.0, 100.0), 2.7859, Tol);
 
    -- TEST 3 — Dividend Yield Impact (Merton Model Extension)
    Put_Line ("TEST 3 — Dividend Yield Impact (Q=0.03)");
-   Check_Float ("3.1 Call with Yield Q=0.03", CPrice (100.0, 100.0, 0.03), 8.7770, Tol);
-   Check_Float ("3.2 Put with Yield Q=0.03",  PPrice (100.0, 100.0, 0.03), 6.8041, Tol);
-   Check_Float ("3.3 Modified Parity Diff", CPrice (100.0, 100.0, 0.03) - PPrice (100.0, 100.0, 0.03), 1.9729, Tol);
+   Check_Float ("3.1 Call with Yield Q=0.03", CPrice (100.0, 100.0, 0.03), 8.6525, Tol);
+   Check_Float ("3.2 Put with Yield Q=0.03",  PPrice (100.0, 100.0, 0.03), 6.7309, Tol);
+   Check_Float ("3.3 Modified Parity Diff", CPrice (100.0, 100.0, 0.03) - PPrice (100.0, 100.0, 0.03), 1.9216, Tol);
 
    -- TEST 4 — Call Delta
    Put_Line ("TEST 4 — Call Delta");
